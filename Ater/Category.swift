@@ -9,13 +9,14 @@
 import Foundation
 
 public class Category {
+    public var id: Int!
     public var name: String!
-    public var imageUrl: String!
-    public var menuItems: [MenuItem]
+    public var image: [UInt8]!
+    public var menuItems: [Product]?
     
-    init(name: String, imageUrl: String, menuItems: [MenuItem]) {
+    init(id: Int, name: String, image: [UInt8]) {
+        self.id = id
         self.name = name
-        self.imageUrl = imageUrl
-        self.menuItems = menuItems
+        self.image = image
     }
 }

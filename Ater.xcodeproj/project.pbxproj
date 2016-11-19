@@ -19,6 +19,7 @@
 		24374ED11DE0B0BE006DCB21 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED01DE0B0BE006DCB21 /* CategoryTableViewController.swift */; };
 		24374ED31DE0B1B7006DCB21 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED21DE0B1B7006DCB21 /* CategoryTableViewCell.swift */; };
 		24374ED51DE0B233006DCB21 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED41DE0B233006DCB21 /* Ingredient.swift */; };
+		24374ED71DE0B716006DCB21 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED61DE0B716006DCB21 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		24374ED01DE0B0BE006DCB21 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		24374ED21DE0B1B7006DCB21 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		24374ED41DE0B233006DCB21 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		24374ED61DE0B716006DCB21 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				24374EAC1DE0907D006DCB21 /* Main.storyboard */,
 				24374ECA1DE09AB7006DCB21 /* Category.swift */,
 				24374ECC1DE09B26006DCB21 /* Product.swift */,
+				24374ED61DE0B716006DCB21 /* Restaurant.swift */,
 				24374EC81DE090C9006DCB21 /* RestaurantService.swift */,
 				24374ED41DE0B233006DCB21 /* Ingredient.swift */,
 				24374EAF1DE0907D006DCB21 /* Assets.xcassets */,
@@ -227,6 +230,7 @@
 				24374ED31DE0B1B7006DCB21 /* CategoryTableViewCell.swift in Sources */,
 				24374ECD1DE09B26006DCB21 /* Product.swift in Sources */,
 				24374ED11DE0B0BE006DCB21 /* CategoryTableViewController.swift in Sources */,
+				24374ED71DE0B716006DCB21 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +438,7 @@
 				24374EC41DE0907D006DCB21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24374EC51DE0907D006DCB21 /* Build configuration list for PBXNativeTarget "AterTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				24374EC71DE0907D006DCB21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
