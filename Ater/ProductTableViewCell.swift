@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  ProductTableViewCell.swift
 //  Ater
 //
 //  Created by Nikola Bozhkov on 11/19/16.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var bgImageView: UIImageView!
+class ProductTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var nameLabel: UIView!
+    @IBOutlet weak var bgImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

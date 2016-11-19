@@ -21,6 +21,8 @@
 		24374ED51DE0B233006DCB21 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED41DE0B233006DCB21 /* Ingredient.swift */; };
 		24374ED71DE0B716006DCB21 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED61DE0B716006DCB21 /* Restaurant.swift */; };
 		24374ED91DE0BB75006DCB21 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED81DE0BB75006DCB21 /* NotificationExtension.swift */; };
+		24374EDB1DE0D579006DCB21 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */; };
+		24374EDD1DE0D585006DCB21 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		24374ED41DE0B233006DCB21 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		24374ED61DE0B716006DCB21 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		24374ED81DE0BB75006DCB21 /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				24374EA81DE0907D006DCB21 /* AppDelegate.swift */,
 				24374EAA1DE0907D006DCB21 /* ViewController.swift */,
 				24374EAC1DE0907D006DCB21 /* Main.storyboard */,
+				24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */,
+				24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */,
 				24374ECA1DE09AB7006DCB21 /* Category.swift */,
 				24374ECC1DE09B26006DCB21 /* Product.swift */,
 				24374ED61DE0B716006DCB21 /* Restaurant.swift */,
@@ -232,8 +238,10 @@
 				24374ECB1DE09AB7006DCB21 /* Category.swift in Sources */,
 				24374ED51DE0B233006DCB21 /* Ingredient.swift in Sources */,
 				24374ED31DE0B1B7006DCB21 /* CategoryTableViewCell.swift in Sources */,
+				24374EDB1DE0D579006DCB21 /* ProductTableViewCell.swift in Sources */,
 				24374ECD1DE09B26006DCB21 /* Product.swift in Sources */,
 				24374ED11DE0B0BE006DCB21 /* CategoryTableViewController.swift in Sources */,
+				24374EDD1DE0D585006DCB21 /* ProductTableViewController.swift in Sources */,
 				24374ED71DE0B716006DCB21 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

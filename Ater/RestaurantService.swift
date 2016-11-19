@@ -23,6 +23,16 @@ public class RestaurantService {
         self.tableId = tableId
     }
     
+    public static func loadSampleCategories() -> [Category] {
+        var categories = [Category]()
+        for i in 1...20 {
+            let category = Category(id: i, name: "Category\(i)", image: [])
+            categories.append(category)
+        }
+        
+        return categories
+    }
+    
     private func getRequest(urlPath: String, completionHandler: @escaping (_: Data?) -> Void) {
         if self.dataTask != nil {
             self.dataTask?.cancel()

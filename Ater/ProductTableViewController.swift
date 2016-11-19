@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewController.swift
+//  ProductTableViewController.swift
 //  Ater
 //
 //  Created by Nikola Bozhkov on 11/19/16.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
-    
-    public var categories = [Category]()
+class ProductTableViewController: UITableViewController {
 
     override func viewDidLoad() {
-        self.categories = RestaurantService.loadSampleCategories()
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,23 +28,24 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.categories.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = self.categories[indexPath.row].name
-        
+
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.
