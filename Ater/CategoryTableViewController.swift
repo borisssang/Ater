@@ -1,52 +1,44 @@
 //
-//  MenuTableViewController.swift
+//  CategoryTableViewController.swift
 //  Ater
 //
-//  Created by Boris Angelov on 11/14/16.
-//  Copyright © 2016 Boris Angelov. All rights reserved.
+//  Created by Nikola Bozhkov on 11/19/16.
+//  Copyright © 2016 Nikola Bozhkov. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
-    var numberOfMenuItems: Int = 12
+class CategoryTableViewController: UITableViewController {
 
-    
-    var menuItems = Array<MenuItem>(){
-        didSet{
-            tableView.reloadData()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-self.clearsSelectionOnViewWillAppear = false
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-               return 1
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
+        return 0
     }
 
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "My Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
 
-        let menuItem = menuItems[indexPath.row]
+        // Configure the cell...
         
-        if let menuItemCell = cell as? MenuItemTableViewCell {
-            menuItemCell.menuItem = menuItem
-        }
-       return cell
+        
+        return cell
     }
-
+ 
 
     /*
     // Override to support conditional editing of the table view.
