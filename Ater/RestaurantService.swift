@@ -62,4 +62,24 @@ public class RestaurantService {
             NotificationCenter.default.post(name: .onCategoriesLoaded, object: data)
         })
     }
+    
+    public func loadProducts(categoryId: Int) {
+        let urlPath = "\(RestaurantService.baseUrl)/api/categories/\(categoryId)"
+        self.getRequest(urlPath: urlPath, completionHandler: {
+            data in
+            
+            print(data ?? "no data")
+            NotificationCenter.default.post(name: .onProductsLoaded, object: data)
+        })
+    }
+    
+    public func loadProduct(productId: Int) {
+        let urlPath = "\(RestaurantService.baseUrl)/api/products/\(productId)"
+        self.getRequest(urlPath: urlPath, completionHandler: {
+            data in
+            
+            print(data ?? "no data")
+            NotificationCenter.default.post(name: .onProductLoaded, object: data)
+        })
+    }
 }
