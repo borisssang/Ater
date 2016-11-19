@@ -23,7 +23,7 @@ public class RestaurantService {
         self.tableId = tableId
     }
     
-    public func loadCategories() {
+    private func getRequest(urlPath: String, completionHandler: @escaping (_: Data?) -> Void) {
         if self.dataTask != nil {
             self.dataTask?.cancel()
         }
@@ -31,7 +31,7 @@ public class RestaurantService {
         // Indicate that the app is loading
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        let url = URL(string: "\(RestaurantService.baseUrl)/api/restaurants/\(self.restaurantId)/categories")!
+        let url = URL(string: urlPath)!
         
         self.dataTask = self.defaultSession.dataTask(with: url, completionHandler: {
             data, response, error in
@@ -45,12 +45,21 @@ public class RestaurantService {
                 print(error.localizedDescription)
             } else if let res = response as? HTTPURLResponse {
                 
-                // If everything is fine, notify with the data
+                // If everything is fine, handle the data
                 if res.statusCode == 200 {
-                    print(data ?? "no data")
-                    NotificationCenter.default.post(name: .onCategoriesLoaded, object: data)
+                    completionHandler(data)
                 }
             }
+        })
+    }
+    
+    public func loadCategories() {
+        let urlPath = "\(RestaurantService.baseUrl)/api/restaurants/\(self.restaurantId)/categories"
+        self.getRequest(urlPath: urlPath, completionHandler: {
+            data in
+            
+            print(data ?? "no data")
+            NotificationCenter.default.post(name: .onCategoriesLoaded, object: data)
         })
     }
 }
