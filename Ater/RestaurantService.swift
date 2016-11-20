@@ -129,4 +129,45 @@ public class RestaurantService {
             NotificationCenter.default.post(name: .onIngredientsLoaded, object: ingredients)
         })
     }
+    
+    public static func placeOrder() {
+        var products = [OrderViewModel]()
+        for order in Order.orderList {
+            products.append(OrderViewModel(productId: order.id))
+        }
+        
+        let jsonObject = ["DeviceUUID": "ya", "Comment": "comment", "OrderedProducts": products] as [String : Any]
+        let json = try! JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+        
+        // create post request
+        let url = URL(string: "api/tables/\(tableId)/createorder")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.httpBody = json
+
+        dataTask = defaultSession.dataTask(with: request, completionHandler: {
+            data, response, error in
+            
+            // Indicate that the app is done loading
+            DispatchQueue.main.async {
+                print("done")
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+            
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let res = response as? HTTPURLResponse {
+                print("res", res.statusCode)
+                // If everything is fine, handle the data
+                if res.statusCode == 200 {
+                    
+                }
+            }
+        })
+        
+        dataTask?.resume()
+    }
 }

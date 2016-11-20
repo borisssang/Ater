@@ -14,10 +14,11 @@ class CategoryTableViewController: UITableViewController {
     public var contents: (restaurantId: Int, tableId: Int)!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         RestaurantService.setup(restaurantId: self.contents!.restaurantId, tableId: self.contents!.tableId)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleCategoriesLoaded), name: .onCategoriesLoaded, object: nil)
         RestaurantService.loadCategories()
-        super.viewDidLoad()
     }
     
     @objc private func handleCategoriesLoaded(notification: Notification) {
@@ -55,12 +56,12 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let productsController = segue.destination as! ProductTableViewController
-        
-        if let selectedCategoryCell = sender as? CategoryTableViewCell {
-            let indexPath = tableView.indexPath(for: selectedCategoryCell)!
-            let category = self.categories[indexPath.row]
-            productsController.category = category
+        if let productsController = segue.destination as? ProductTableViewController {
+            if let selectedCategoryCell = sender as? CategoryTableViewCell {
+                let indexPath = tableView.indexPath(for: selectedCategoryCell)!
+                let category = self.categories[indexPath.row]
+                productsController.category = category
+            }
         }
     }
 
