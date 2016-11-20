@@ -136,7 +136,7 @@ public class RestaurantService {
             products.append(OrderViewModel(productId: order.id))
         }
         
-        let jsonObject = ["DeviceUUID": "ya", "Comment": "comment", "OrderedProducts": products] as [String : Any]
+        let jsonObject = ["DeviceUUID": "ya", "Comment": "comment", "OrderedProducts": products.description] as [String : Any]
         let json = try! JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
         
         // create post request

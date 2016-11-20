@@ -24,6 +24,7 @@ class ProductViewController: UIViewController {
         
         self.navigationItem.title = product.name
         self.descriptionLabel.text = self.product.description
+        self.priceLabel.text = self.product.price.description
     }
     
     @IBAction func addToOrder(_ sender: Any) {

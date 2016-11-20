@@ -29,12 +29,13 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func placeOrder(_ sender: Any) {
-//        RestaurantService.placeOrder()
-//        Order.orderList = [Product]()
-//        
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
+        RestaurantService.placeOrder()
+        Order.orderList = [Product]()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.priceLabel.text = "0"
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
