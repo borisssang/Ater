@@ -23,6 +23,7 @@
 		24374ED91DE0BB75006DCB21 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374ED81DE0BB75006DCB21 /* NotificationExtension.swift */; };
 		24374EDB1DE0D579006DCB21 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */; };
 		24374EDD1DE0D585006DCB21 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */; };
+		24374EDF1DE139A6006DCB21 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EDE1DE139A6006DCB21 /* ProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		24374ED81DE0BB75006DCB21 /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		24374EDE1DE139A6006DCB21 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				24374EA81DE0907D006DCB21 /* AppDelegate.swift */,
 				24374EAA1DE0907D006DCB21 /* ViewController.swift */,
 				24374EAC1DE0907D006DCB21 /* Main.storyboard */,
+				24374EDE1DE139A6006DCB21 /* ProductViewController.swift */,
 				24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */,
 				24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */,
 				24374ECA1DE09AB7006DCB21 /* Category.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24374EDF1DE139A6006DCB21 /* ProductViewController.swift in Sources */,
 				24374ED91DE0BB75006DCB21 /* NotificationExtension.swift in Sources */,
 				24374EAB1DE0907D006DCB21 /* ViewController.swift in Sources */,
 				24374EA91DE0907D006DCB21 /* AppDelegate.swift in Sources */,

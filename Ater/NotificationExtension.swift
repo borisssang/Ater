@@ -11,5 +11,5 @@ import Foundation
 extension Notification.Name {
     public static let onCategoriesLoaded = Notification.Name("onCategoriesLoaded")
     public static let onProductsLoaded = Notification.Name("onProductsLoaded")
-    public static let onProductLoaded = Notification.Name("onProductLoaded")
+    public static let onIngredientsLoaded = Notification.Name("onIngredientsLoaded")
 }

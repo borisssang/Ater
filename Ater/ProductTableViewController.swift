@@ -51,10 +51,21 @@ class ProductTableViewController: UITableViewController {
         // Configure the cell...
         let product = self.products[indexPath.row]
         cell.nameLabel.text = product.name
+        cell.priceLabel.text = product.price.description
+        cell.descriptionLabel.text = product.description
         
         return cell
     }
- 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let productController = segue.destination as! ProductViewController
+        
+        if let selectedProductCell = sender as? ProductTableViewCell {
+            let indexPath = self.tableView.indexPath(for: selectedProductCell)!
+            let product = self.products[indexPath.row]
+            productController.product = product
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

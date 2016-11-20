@@ -96,7 +96,7 @@ public class RestaurantService {
             data in
             
             let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [Any]
-            print(json)
+
             var products = [Product]()
             for jsonProduct in json {
                 let jsonDict = jsonProduct as! Dictionary<String, Any>
@@ -105,7 +105,6 @@ public class RestaurantService {
                 let name = jsonDict["Name"] as! String
                 let image = jsonDict["Image"] as! String
                 let description = jsonDict["Description"] as! String
-//                let price = NumberFormatter().number(from:(jsonDict["Price"] as! String))!.decimalValue
                 let price = jsonDict["Price"] as! NSNumber
                 let weight = jsonDict["Weight"] as! Int
                 let timesOrdered = jsonDict["TimesOrdered"] as! Int
@@ -118,13 +117,26 @@ public class RestaurantService {
         })
     }
     
-    public static func loadProduct(productId: Int) {
-        let urlPath = "\(baseUrl)/api/products/\(productId)"
+    public static func loadProductIngredients(productId: Int) {
+        let urlPath = "\(baseUrl)/api/products/\(productId)/ingredients"
         getRequest(urlPath: urlPath, completionHandler: {
             data in
             
-            print(data ?? "no data")
-            NotificationCenter.default.post(name: .onProductLoaded, object: data)
+            let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [Any]
+            
+            var ingredients = [Ingredient]()
+            for jsonIngredient in json {
+                let jsonDict = jsonIngredient as! Dictionary<String, Any>
+                
+                let id = jsonDict["Id"] as! Int
+                let name = jsonDict["Name"] as! String
+                let isAllergen = jsonDict["IsAllergen"] as! Bool
+                
+                let ingredient = Ingredient(id: id, name: name, isAllergen: isAllergen)
+                ingredients.append(ingredient)
+            }
+            
+            NotificationCenter.default.post(name: .onIngredientsLoaded, object: ingredients)
         })
     }
 }
