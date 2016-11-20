@@ -2,8 +2,8 @@
 //  CategoryTableViewController.swift
 //  Ater
 //
-//  Created by Nikola Bozhkov on 11/19/16.
-//  Copyright © 2016 Nikola Bozhkov. All rights reserved.
+//  Created by Boris Angelov on 11/19/16.
+//  Copyright © 2016 Boris Angelov. All rights reserved.
 //
 
 import UIKit
@@ -11,9 +11,10 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     public var categories = [Category]()
-
+    public var contents: (Int, Int)?
+    
     override func viewDidLoad() {
-        RestaurantService.setup(restaurantId: 1, tableId: 1)
+        RestaurantService.setup(restaurantId: (contents?.0)!, tableId: (contents?.1)!)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleCategoriesLoaded), name: .onCategoriesLoaded, object: nil)
         RestaurantService.loadCategories()
         super.viewDidLoad()

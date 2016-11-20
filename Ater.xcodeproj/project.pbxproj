@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051B65851DE1571D00D23864 /* AterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B65841DE1571D00D23864 /* AterViewController.swift */; };
+		051B65871DE1600300D23864 /* QRcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B65861DE1600300D23864 /* QRcodeViewController.swift */; };
 		24374EA91DE0907D006DCB21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EA81DE0907D006DCB21 /* AppDelegate.swift */; };
-		24374EAB1DE0907D006DCB21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24374EAA1DE0907D006DCB21 /* ViewController.swift */; };
 		24374EAE1DE0907D006DCB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24374EAC1DE0907D006DCB21 /* Main.storyboard */; };
 		24374EB01DE0907D006DCB21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24374EAF1DE0907D006DCB21 /* Assets.xcassets */; };
 		24374EB31DE0907D006DCB21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24374EB11DE0907D006DCB21 /* LaunchScreen.storyboard */; };
@@ -37,9 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051B65841DE1571D00D23864 /* AterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AterViewController.swift; sourceTree = "<group>"; };
+		051B65861DE1600300D23864 /* QRcodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRcodeViewController.swift; sourceTree = "<group>"; };
 		24374EA51DE0907D006DCB21 /* Ater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24374EA81DE0907D006DCB21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24374EAA1DE0907D006DCB21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24374EAD1DE0907D006DCB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24374EAF1DE0907D006DCB21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24374EB21DE0907D006DCB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,11 +104,12 @@
 				24374ED01DE0B0BE006DCB21 /* CategoryTableViewController.swift */,
 				24374ED21DE0B1B7006DCB21 /* CategoryTableViewCell.swift */,
 				24374EA81DE0907D006DCB21 /* AppDelegate.swift */,
-				24374EAA1DE0907D006DCB21 /* ViewController.swift */,
 				24374EAC1DE0907D006DCB21 /* Main.storyboard */,
+				051B65861DE1600300D23864 /* QRcodeViewController.swift */,
 				24374EDE1DE139A6006DCB21 /* ProductViewController.swift */,
 				24374EDA1DE0D579006DCB21 /* ProductTableViewCell.swift */,
 				24374EDC1DE0D585006DCB21 /* ProductTableViewController.swift */,
+				051B65841DE1571D00D23864 /* AterViewController.swift */,
 				24374ECA1DE09AB7006DCB21 /* Category.swift */,
 				24374ECC1DE09B26006DCB21 /* Product.swift */,
 				24374ED61DE0B716006DCB21 /* Restaurant.swift */,
@@ -236,7 +239,6 @@
 			files = (
 				24374EDF1DE139A6006DCB21 /* ProductViewController.swift in Sources */,
 				24374ED91DE0BB75006DCB21 /* NotificationExtension.swift in Sources */,
-				24374EAB1DE0907D006DCB21 /* ViewController.swift in Sources */,
 				24374EA91DE0907D006DCB21 /* AppDelegate.swift in Sources */,
 				24374EC91DE090C9006DCB21 /* RestaurantService.swift in Sources */,
 				24374ECB1DE09AB7006DCB21 /* Category.swift in Sources */,
@@ -244,8 +246,10 @@
 				24374ED31DE0B1B7006DCB21 /* CategoryTableViewCell.swift in Sources */,
 				24374EDB1DE0D579006DCB21 /* ProductTableViewCell.swift in Sources */,
 				24374ECD1DE09B26006DCB21 /* Product.swift in Sources */,
+				051B65851DE1571D00D23864 /* AterViewController.swift in Sources */,
 				24374ED11DE0B0BE006DCB21 /* CategoryTableViewController.swift in Sources */,
 				24374EDD1DE0D585006DCB21 /* ProductTableViewController.swift in Sources */,
+				051B65871DE1600300D23864 /* QRcodeViewController.swift in Sources */,
 				24374ED71DE0B716006DCB21 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

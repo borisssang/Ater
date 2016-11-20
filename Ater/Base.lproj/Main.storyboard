@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0gS-Aw-TQb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ynH-xQ-Vfn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fef-23-PPk" id="HrF-Uv-e8X">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Fe-33P">
@@ -80,7 +80,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bVK-CC-9mo" id="X2o-qF-202">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-2P-g4Q">
@@ -227,6 +227,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSV-DR-mbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2216.8000000000002" y="124.58770614692655"/>
+        </scene>
+        <!--Ater View Controller-->
+        <scene sceneID="Ge1-8k-xML">
+            <objects>
+                <viewController id="ynH-xQ-Vfn" customClass="AterViewController" customModule="Ater" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aSc-io-SD7"/>
+                        <viewControllerLayoutGuide type="bottom" id="vBu-qq-M5Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Un-74-736">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lOK-7B-tKa">
+                                <rect key="frame" x="0.0" y="477.5" width="375" height="104.5"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Scan ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.72336632010000002" green="0.17398672470000001" blue="0.14747130889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="80" name="AmericanTypewriter"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="5me-EY-vb3" kind="show" id="DEI-ZD-dqt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lOK-7B-tKa" secondAttribute="trailing" id="B0p-Ip-kCl"/>
+                            <constraint firstItem="vBu-qq-M5Y" firstAttribute="top" secondItem="lOK-7B-tKa" secondAttribute="bottom" constant="85" id="I3f-Cs-eNt"/>
+                            <constraint firstItem="lOK-7B-tKa" firstAttribute="leading" secondItem="9Un-74-736" secondAttribute="leading" id="XqJ-hQ-dVs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpD-5i-38B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1588" y="125"/>
+        </scene>
+        <!--Rcode View Controller-->
+        <scene sceneID="FgT-RY-fSP">
+            <objects>
+                <viewController id="5me-EY-vb3" customClass="QRcodeViewController" customModule="Ater" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QCL-m4-O8e"/>
+                        <viewControllerLayoutGuide type="bottom" id="ujN-ns-DNK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dlH-kF-MVO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="0gS-Aw-TQb" kind="show" identifier="showCategories" id="zwi-mF-vY0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fkM-XE-K6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810.39999999999998" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B2o-a7-XHA">

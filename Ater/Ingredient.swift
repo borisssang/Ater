@@ -2,8 +2,8 @@
 //  Ingredient.swift
 //  Ater
 //
-//  Created by Nikola Bozhkov on 11/19/16.
-//  Copyright © 2016 Nikola Bozhkov. All rights reserved.
+//  Created by Boris Angelov on 11/19/16.
+//  Copyright © 2016 Boris Angelov. All rights reserved.
 //
 
 import Foundation
