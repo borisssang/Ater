@@ -72,7 +72,7 @@ public class RestaurantService {
                 let name = jsonDict["Name"] as! String
                 let image = jsonDict["Image"] as! String
                 
-                let category = Category(id: id, name: name, image: URL(string: image)!)
+                let category = Category(id: id, name: name, image: image)
                 categories.append(category)
             }
             
@@ -99,7 +99,7 @@ public class RestaurantService {
                 let weight = jsonDict["Weight"] as! Int
                 let timesOrdered = jsonDict["TimesOrdered"] as! Int
                 
-                let product = Product(id: id, name: name, description: description, image: URL(string: image)!, price: price.decimalValue, timesOrdered: timesOrdered, weight: weight)
+                let product = Product(id: id, name: name, description: description, image: image, price: price.decimalValue, timesOrdered: timesOrdered, weight: weight)
                 products.append(product)
             }
 

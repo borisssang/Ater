@@ -52,6 +52,7 @@ class ProductTableViewController: UITableViewController {
 
         // Configure the cell...
         let product = self.products[indexPath.row]
+        cell.bgImageView.getImgFromUrl(link: product.image, contentMode: .scaleAspectFill)
         cell.nameLabel.text = product.name
         cell.priceLabel.text = product.price.description
         cell.descriptionLabel.text = product.description

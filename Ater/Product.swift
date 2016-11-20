@@ -12,13 +12,13 @@ public class Product {
     public var id: Int!
     public var name: String!
     public var description: String!
-    public var image: URL!
+    public var image: String!
     public var ingredients: [Ingredient]?
     public var price: Decimal!
     public var timesOrdered: Int!
     public var weight: Int!
     
-    init(id: Int, name: String, description: String, image: URL, price: Decimal, timesOrdered: Int, weight: Int) {
+    init(id: Int, name: String, description: String, image: String, price: Decimal, timesOrdered: Int, weight: Int) {
         self.id = id
         self.name = name
         self.description = description

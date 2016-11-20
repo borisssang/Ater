@@ -31,20 +31,28 @@
                                         <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Fe-33P">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-KF-Z71">
-                                            <rect key="frame" x="0.0" y="60" width="375" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-Us-qHy">
+                                            <rect key="frame" x="0.0" y="32" width="375" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-KF-Z71">
+                                            <rect key="frame" x="0.0" y="32" width="375" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="0hy-KF-Z71" firstAttribute="top" secondItem="HrF-Uv-e8X" secondAttribute="topMargin" constant="52" id="0Bb-Ir-0ai"/>
+                                        <constraint firstItem="0hy-KF-Z71" firstAttribute="top" secondItem="HrF-Uv-e8X" secondAttribute="topMargin" constant="24" id="0Bb-Ir-0ai"/>
                                         <constraint firstAttribute="bottom" secondItem="JaZ-Fe-33P" secondAttribute="bottom" id="0I7-zb-wU0"/>
                                         <constraint firstItem="JaZ-Fe-33P" firstAttribute="trailing" secondItem="0hy-KF-Z71" secondAttribute="trailing" id="9BC-Tb-TIm"/>
                                         <constraint firstAttribute="trailing" secondItem="JaZ-Fe-33P" secondAttribute="trailing" id="AL2-om-J4S"/>
                                         <constraint firstItem="JaZ-Fe-33P" firstAttribute="leading" secondItem="HrF-Uv-e8X" secondAttribute="leading" id="LZm-h3-sK4"/>
-                                        <constraint firstItem="0hy-KF-Z71" firstAttribute="bottom" secondItem="JaZ-Fe-33P" secondAttribute="bottom" id="N0Z-lT-ga2"/>
+                                        <constraint firstItem="0hy-KF-Z71" firstAttribute="bottom" secondItem="JaZ-Fe-33P" secondAttribute="bottom" constant="-32" id="N0Z-lT-ga2"/>
                                         <constraint firstItem="JaZ-Fe-33P" firstAttribute="top" secondItem="HrF-Uv-e8X" secondAttribute="top" id="SBI-mi-hEV"/>
                                         <constraint firstItem="JaZ-Fe-33P" firstAttribute="leading" secondItem="0hy-KF-Z71" secondAttribute="leading" id="dOE-ON-jZh"/>
                                     </constraints>
@@ -226,13 +234,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAf-Za-6SB">
-                                            <rect key="frame" x="117" y="8" width="250" height="21"/>
+                                            <rect key="frame" x="133" y="8" width="234" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some description here " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUz-qr-jnG">
-                                            <rect key="frame" x="117" y="37" width="250" height="16"/>
+                                            <rect key="frame" x="133" y="37" width="234" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="TFZ-99-gpY"/>
                                             </constraints>
@@ -261,7 +269,7 @@
                                         <constraint firstItem="vAf-Za-6SB" firstAttribute="leading" secondItem="nUz-qr-jnG" secondAttribute="leading" id="8Hd-8M-6qY"/>
                                         <constraint firstAttribute="bottom" secondItem="f8g-2P-g4Q" secondAttribute="bottom" id="B0v-5m-PBR"/>
                                         <constraint firstItem="2Hd-AC-uTH" firstAttribute="leading" secondItem="1ut-Mq-N1E" secondAttribute="trailing" id="TFW-Oq-QqJ"/>
-                                        <constraint firstItem="vAf-Za-6SB" firstAttribute="leading" secondItem="f8g-2P-g4Q" secondAttribute="trailing" constant="8" symbolic="YES" id="VJu-R9-d56"/>
+                                        <constraint firstItem="vAf-Za-6SB" firstAttribute="leading" secondItem="f8g-2P-g4Q" secondAttribute="trailing" constant="24" id="VJu-R9-d56"/>
                                         <constraint firstItem="f8g-2P-g4Q" firstAttribute="top" secondItem="X2o-qF-202" secondAttribute="top" id="X88-gO-D8X"/>
                                         <constraint firstItem="2Hd-AC-uTH" firstAttribute="top" secondItem="nUz-qr-jnG" secondAttribute="bottom" constant="27" id="ac6-R4-RT9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2Hd-AC-uTH" secondAttribute="trailing" id="g16-0g-0rk"/>
@@ -392,6 +400,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImageView" destination="kxm-Bn-nPj" id="phW-KR-Tkb"/>
                         <outlet property="descriptionLabel" destination="bg3-oU-9SU" id="wZv-H5-A4x"/>
                         <outlet property="priceLabel" destination="NyN-pU-gJJ" id="BTW-bj-eeO"/>
                         <outlet property="productImageView" destination="kxm-Bn-nPj" id="ZZI-oA-eeo"/>

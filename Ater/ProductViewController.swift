@@ -13,6 +13,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
     
     public var product: Product!
     
@@ -25,6 +26,7 @@ class ProductViewController: UIViewController {
         self.navigationItem.title = product.name
         self.descriptionLabel.text = self.product.description
         self.priceLabel.text = self.product.price.description
+        bgImageView.getImgFromUrl(link: self.product.image, contentMode: .scaleAspectFill)
     }
     
     @IBAction func addToOrder(_ sender: Any) {

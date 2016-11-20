@@ -55,6 +55,8 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.nameLabel.text = product.name
         cell.priceLabel.text = product.price.description
         cell.descriptionLabel.text = product.description
+        cell.bgImageView.getImgFromUrl(link: product.image, contentMode: .scaleAspectFill)
+
         
         return cell
     }
