@@ -12,6 +12,7 @@ public class Ingredient {
     public var id: Int!
     public var name: String!
     public var isAllergen: Bool!
+    public var included = true
     
     init(id: Int, name: String, isAllergen: Bool) {
         self.id = id

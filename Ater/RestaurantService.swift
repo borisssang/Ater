@@ -23,16 +23,6 @@ public class RestaurantService {
         self.tableId = tableId
     }
     
-    public static func loadSampleCategories() -> [Category] {
-        var categories = [Category]()
-        for i in 1...20 {
-            let category = Category(id: i, name: "Category\(i)", image: [])
-            categories.append(category)
-        }
-        
-        return categories
-    }
-    
     private static func getRequest(urlPath: String, completionHandler: @escaping (_: Data?) -> Void) {
         if dataTask != nil {
             dataTask?.cancel()
@@ -82,7 +72,7 @@ public class RestaurantService {
                 let name = jsonDict["Name"] as! String
                 let image = jsonDict["Image"] as! String
                 
-                let category = Category(id: id, name: name, image: Array(image.utf8))
+                let category = Category(id: id, name: name, image: URL(string: image)!)
                 categories.append(category)
             }
             
@@ -109,7 +99,7 @@ public class RestaurantService {
                 let weight = jsonDict["Weight"] as! Int
                 let timesOrdered = jsonDict["TimesOrdered"] as! Int
                 
-                let product = Product(id: id, name: name, description: description, image: Array(image.utf8), price: price.decimalValue, timesOrdered: timesOrdered, weight: weight)
+                let product = Product(id: id, name: name, description: description, image: URL(string: image)!, price: price.decimalValue, timesOrdered: timesOrdered, weight: weight)
                 products.append(product)
             }
 

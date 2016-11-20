@@ -12,6 +12,7 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     public var product: Product!
     
@@ -25,9 +26,46 @@ class ProductViewController: UIViewController {
         self.descriptionLabel.text = self.product.description
     }
     
+    @IBAction func addToOrder(_ sender: Any) {
+        Order.orderList.append(self.product)
+    }
+    
     @objc private func handleIngredientsLoaded(notification: Notification) {
         self.product.ingredients = (notification.object as! [Ingredient])
-        print(self.product.ingredients ?? "no data")
+        
+        DispatchQueue.main.async {
+            let ingredientsLabel = self.view.viewWithTag(1)! as! UILabel
+            var lastY = ingredientsLabel.center.y
+            
+            for i in 0..<self.product.ingredients!.count {
+                let ingredient = self.product.ingredients![i]
+                
+                let label = IngredientLabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+                label.index = i
+                
+                label.text = ingredient.name
+                label.sizeToFit()
+                label.backgroundColor = ingredient.included ? .green : .red
+                label.isUserInteractionEnabled = true
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleIngredientToggle))
+                label.addGestureRecognizer(tapGesture)
+                
+                let newY = lastY + 30
+                lastY = newY
+                
+                label.center = CGPoint(x: label.frame.size.width / 2 + 16, y: newY)
+                
+                self.view.viewWithTag(2)!.addSubview(label)
+            }
+        }
+    }
+    
+    @objc private func handleIngredientToggle(sender: UITapGestureRecognizer) {
+        let label = sender.view as! IngredientLabel
+        let ingredient = self.product.ingredients![label.index]
+        ingredient.included = !ingredient.included
+        label.backgroundColor = ingredient.included ? .green : .red
     }
 
     override func didReceiveMemoryWarning() {

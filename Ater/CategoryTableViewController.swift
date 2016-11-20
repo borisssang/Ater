@@ -49,6 +49,7 @@ class CategoryTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.nameLabel.text = self.categories[indexPath.row].name
+        cell.bgImageView.getImgFromUrl(link: String(describing: categories[indexPath.row].image), contentMode: .scaleAspectFill)
         
         return cell
     }
