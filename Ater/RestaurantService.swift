@@ -91,12 +91,30 @@ public class RestaurantService {
     }
     
     public static func loadProducts(categoryId: Int) {
-        let urlPath = "\(baseUrl)/api/categories/\(categoryId)"
+        let urlPath = "\(baseUrl)/api/categories/\(categoryId)/products"
         getRequest(urlPath: urlPath, completionHandler: {
             data in
             
-            print(data ?? "no data")
-            NotificationCenter.default.post(name: .onProductsLoaded, object: data)
+            let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [Any]
+            print(json)
+            var products = [Product]()
+            for jsonProduct in json {
+                let jsonDict = jsonProduct as! Dictionary<String, Any>
+                
+                let id = jsonDict["Id"] as! Int
+                let name = jsonDict["Name"] as! String
+                let image = jsonDict["Image"] as! String
+                let description = jsonDict["Description"] as! String
+//                let price = NumberFormatter().number(from:(jsonDict["Price"] as! String))!.decimalValue
+                let price = jsonDict["Price"] as! NSNumber
+                let weight = jsonDict["Weight"] as! Int
+                let timesOrdered = jsonDict["TimesOrdered"] as! Int
+                
+                let product = Product(id: id, name: name, description: description, image: Array(image.utf8), price: price.decimalValue, timesOrdered: timesOrdered, weight: weight)
+                products.append(product)
+            }
+
+            NotificationCenter.default.post(name: .onProductsLoaded, object: products)
         })
     }
     

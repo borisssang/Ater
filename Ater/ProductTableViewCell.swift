@@ -10,7 +10,7 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
 
     override func awakeFromNib() {

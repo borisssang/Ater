@@ -13,11 +13,11 @@ class CategoryTableViewController: UITableViewController {
     public var categories = [Category]()
 
     override func viewDidLoad() {
-        //self.categories = RestaurantService.loadSampleCategories()
         RestaurantService.setup(restaurantId: 1, tableId: 1)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleCategoriesLoaded), name: .onCategoriesLoaded, object: nil)
         RestaurantService.loadCategories()
         super.viewDidLoad()
+        print("loaded")
     }
     
     @objc private func handleCategoriesLoaded(notification: Notification) {
@@ -26,8 +26,6 @@ class CategoryTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
-        //self.refreshControl?.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +52,16 @@ class CategoryTableViewController: UITableViewController {
         
         return cell
     }
- 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let productsController = segue.destination as! ProductTableViewController
+        
+        if let selectedCategoryCell = sender as? CategoryTableViewCell {
+            let indexPath = tableView.indexPath(for: selectedCategoryCell)!
+            let category = self.categories[indexPath.row]
+            productsController.categoryId = category.id
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
