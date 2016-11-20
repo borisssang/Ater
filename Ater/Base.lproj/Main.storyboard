@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Fe-33P">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JaZ-Fe-33P">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hy-KF-Z71">
@@ -38,9 +38,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0hy-KF-Z71" firstAttribute="leading" secondItem="HrF-Uv-e8X" secondAttribute="leadingMargin" id="33y-nW-Xdt"/>
-                                        <constraint firstItem="0hy-KF-Z71" firstAttribute="centerX" secondItem="JaZ-Fe-33P" secondAttribute="centerX" id="57L-if-gBM"/>
+                                        <constraint firstItem="JaZ-Fe-33P" firstAttribute="bottom" secondItem="HrF-Uv-e8X" secondAttribute="bottomMargin" constant="8" id="PwB-SV-VVw"/>
+                                        <constraint firstItem="JaZ-Fe-33P" firstAttribute="leading" secondItem="0hy-KF-Z71" secondAttribute="leading" constant="-8" id="SMD-vV-zoE"/>
                                         <constraint firstItem="0hy-KF-Z71" firstAttribute="trailing" secondItem="HrF-Uv-e8X" secondAttribute="trailingMargin" id="YTx-kR-Bbj"/>
+                                        <constraint firstItem="JaZ-Fe-33P" firstAttribute="top" secondItem="0hy-KF-Z71" secondAttribute="top" constant="-8" id="q3z-GA-Blp"/>
                                         <constraint firstItem="0hy-KF-Z71" firstAttribute="top" secondItem="HrF-Uv-e8X" secondAttribute="topMargin" id="rcG-62-trc"/>
+                                        <constraint firstItem="JaZ-Fe-33P" firstAttribute="trailing" secondItem="0hy-KF-Z71" secondAttribute="trailing" constant="8" id="w9K-pN-epe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -64,7 +67,7 @@
         <!--Category-->
         <scene sceneID="v62-Jc-eTO">
             <objects>
-                <tableViewController title="Category" id="DVA-s7-K7J" sceneMemberID="viewController">
+                <tableViewController title="Category" id="DVA-s7-K7J" customClass="ProductTableViewController" customModule="Ater" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OTx-H5-94g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

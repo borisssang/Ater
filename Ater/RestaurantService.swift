@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 public class RestaurantService {
-    private static let baseUrl = ""
+    private static let baseUrl = "http://ater.azurewebsites.net"
     
-    private let defaultSession = URLSession(configuration: .default)
-    private var dataTask: URLSessionDataTask?
+    private static let defaultSession = URLSession(configuration: .default)
+    private static var dataTask: URLSessionDataTask?
     
-    private var restaurantId: Int!
-    private var tableId: Int!
+    private static var restaurantId: Int!
+    private static var tableId: Int!
     
-    init(restaurantId: Int, tableId: Int) {
+    public static func setup(restaurantId: Int, tableId: Int) {
         self.restaurantId = restaurantId
         self.tableId = tableId
     }
@@ -33,9 +33,9 @@ public class RestaurantService {
         return categories
     }
     
-    private func getRequest(urlPath: String, completionHandler: @escaping (_: Data?) -> Void) {
-        if self.dataTask != nil {
-            self.dataTask?.cancel()
+    private static func getRequest(urlPath: String, completionHandler: @escaping (_: Data?) -> Void) {
+        if dataTask != nil {
+            dataTask?.cancel()
         }
         
         // Indicate that the app is loading
@@ -43,39 +43,56 @@ public class RestaurantService {
         
         let url = URL(string: urlPath)!
         
-        self.dataTask = self.defaultSession.dataTask(with: url, completionHandler: {
+        dataTask = defaultSession.dataTask(with: url, completionHandler: {
             data, response, error in
             
             // Indicate that the app is done loading
             DispatchQueue.main.async {
+                print("done")
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
             
             if let error = error {
                 print(error.localizedDescription)
             } else if let res = response as? HTTPURLResponse {
-                
+                print("res", res.statusCode)
                 // If everything is fine, handle the data
                 if res.statusCode == 200 {
                     completionHandler(data)
                 }
             }
         })
+        
+        dataTask?.resume()
     }
     
-    public func loadCategories() {
-        let urlPath = "\(RestaurantService.baseUrl)/api/restaurants/\(self.restaurantId)/categories"
-        self.getRequest(urlPath: urlPath, completionHandler: {
+    public static func loadCategories() {
+        let urlPath = "\(baseUrl)/api/restaurants/\(restaurantId!)/categories"
+        print(urlPath)
+        getRequest(urlPath: urlPath, completionHandler: {
             data in
             
-            print(data ?? "no data")
-            NotificationCenter.default.post(name: .onCategoriesLoaded, object: data)
+            let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! [Any]
+            
+            var categories = [Category]()
+            for jsonCategory in json {
+                let jsonDict = jsonCategory as! Dictionary<String, Any>
+                
+                let id = jsonDict["Id"] as! Int
+                let name = jsonDict["Name"] as! String
+                let image = jsonDict["Image"] as! String
+                
+                let category = Category(id: id, name: name, image: Array(image.utf8))
+                categories.append(category)
+            }
+            
+            NotificationCenter.default.post(name: .onCategoriesLoaded, object: categories)
         })
     }
     
-    public func loadProducts(categoryId: Int) {
-        let urlPath = "\(RestaurantService.baseUrl)/api/categories/\(categoryId)"
-        self.getRequest(urlPath: urlPath, completionHandler: {
+    public static func loadProducts(categoryId: Int) {
+        let urlPath = "\(baseUrl)/api/categories/\(categoryId)"
+        getRequest(urlPath: urlPath, completionHandler: {
             data in
             
             print(data ?? "no data")
@@ -83,9 +100,9 @@ public class RestaurantService {
         })
     }
     
-    public func loadProduct(productId: Int) {
-        let urlPath = "\(RestaurantService.baseUrl)/api/products/\(productId)"
-        self.getRequest(urlPath: urlPath, completionHandler: {
+    public static func loadProduct(productId: Int) {
+        let urlPath = "\(baseUrl)/api/products/\(productId)"
+        getRequest(urlPath: urlPath, completionHandler: {
             data in
             
             print(data ?? "no data")

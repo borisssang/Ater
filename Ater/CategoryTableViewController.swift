@@ -13,8 +13,21 @@ class CategoryTableViewController: UITableViewController {
     public var categories = [Category]()
 
     override func viewDidLoad() {
-        self.categories = RestaurantService.loadSampleCategories()
+        //self.categories = RestaurantService.loadSampleCategories()
+        RestaurantService.setup(restaurantId: 1, tableId: 1)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleCategoriesLoaded), name: .onCategoriesLoaded, object: nil)
+        RestaurantService.loadCategories()
         super.viewDidLoad()
+    }
+    
+    @objc private func handleCategoriesLoaded(notification: Notification) {
+        self.categories = notification.object as! [Category]
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        //self.refreshControl?.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
