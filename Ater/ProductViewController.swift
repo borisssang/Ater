@@ -20,7 +20,8 @@ class ProductViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleIngredientsLoaded), name: .onIngredientsLoaded, object: nil)
         RestaurantService.loadProductIngredients(productId: product.id)
-        // Do any additional setup after loading the view.
+        
+        self.descriptionLabel.text = self.product.description
     }
     
     @objc private func handleIngredientsLoaded(notification: Notification) {
