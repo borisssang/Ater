@@ -21,6 +21,7 @@ class ProductViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleIngredientsLoaded), name: .onIngredientsLoaded, object: nil)
         RestaurantService.loadProductIngredients(productId: product.id)
         
+        self.navigationItem.title = product.name
         self.descriptionLabel.text = self.product.description
     }
     

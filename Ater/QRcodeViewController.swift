@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 class QRcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
-    public var qrCode: (Int, Int)?
+    public var qrCode: (restaurantId: Int, tableId: Int)!
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
@@ -96,15 +96,13 @@ class QRcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             if metadataObj.stringValue != nil {
+
+                let data = metadataObj.stringValue.characters.split(separator: "-").map(String.init)
+                print(data)
+                qrCode = (Int(data[0])!, Int(data[1])!)
                 
-                
-              //заспивам вече// не мога да парсна метадата обекта в тюпъл
-//                let data = metadataObj.stringValue
-//                qrCode?.0 = Int(data!)!
-//                qrCode?.1 = Int(data!)!
-                
-                
-                
+                self.captureSession?.stopRunning()
+                self.performSegue(withIdentifier: "showCategories", sender: nil)
             }
         }
     }
@@ -113,6 +111,6 @@ class QRcodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             let svc = segue.destination as? UINavigationController
             let controller: CategoryTableViewController = svc?.topViewController as! CategoryTableViewController
             controller.contents = qrCode
-    }
+        }
     }
 }

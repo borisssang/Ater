@@ -12,7 +12,7 @@ class AterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "15134062_1223000071071342_738437563_o")?.draw(in: self.view.bounds)
+        UIImage(named: "homeBg")?.draw(in: self.view.bounds)
         
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         

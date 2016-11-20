@@ -11,14 +11,13 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     public var categories = [Category]()
-    public var contents: (Int, Int)?
+    public var contents: (restaurantId: Int, tableId: Int)!
     
     override func viewDidLoad() {
-        RestaurantService.setup(restaurantId: (contents?.0)!, tableId: (contents?.1)!)
+        RestaurantService.setup(restaurantId: self.contents!.restaurantId, tableId: self.contents!.tableId)
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleCategoriesLoaded), name: .onCategoriesLoaded, object: nil)
         RestaurantService.loadCategories()
         super.viewDidLoad()
-        print("loaded")
     }
     
     @objc private func handleCategoriesLoaded(notification: Notification) {
@@ -60,7 +59,7 @@ class CategoryTableViewController: UITableViewController {
         if let selectedCategoryCell = sender as? CategoryTableViewCell {
             let indexPath = tableView.indexPath(for: selectedCategoryCell)!
             let category = self.categories[indexPath.row]
-            productsController.categoryId = category.id
+            productsController.category = category
         }
     }
 

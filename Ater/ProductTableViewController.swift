@@ -10,14 +10,16 @@ import UIKit
 
 class ProductTableViewController: UITableViewController {
     
-    public var categoryId: Int!
+    public var category: Category!
     public var products = [Product]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleProductsLoaded), name: .onProductsLoaded, object: nil)
-        RestaurantService.loadProducts(categoryId: self.categoryId)
+        RestaurantService.loadProducts(categoryId: self.category.id)
+        
+        self.navigationItem.title = self.category.name
     }
 
     @objc private func handleProductsLoaded(notification: Notification) {
